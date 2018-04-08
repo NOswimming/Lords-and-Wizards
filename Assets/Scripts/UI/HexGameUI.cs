@@ -9,7 +9,7 @@ public class HexGameUI : MonoBehaviour {
 
 	HexUnit selectedUnit;
 
-    public bool fogOfWarEnabled;
+    public bool fogOfWarEnabled = true;
 
 	public void SetEditMode (bool toggle) {
 		enabled = !toggle;
@@ -77,7 +77,8 @@ public class HexGameUI : MonoBehaviour {
             if(currentCell)
                 currentCell.DisableHighlight();
             currentCell = cell;
-            currentCell.EnableHighlight(Color.blue);
+            if (currentCell)
+                currentCell.EnableHighlight(Color.blue);
 			return true;
 		}
 		return false;
